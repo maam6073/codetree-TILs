@@ -14,7 +14,7 @@ public class Main {
 
         int p = 0 , m = 0;
         for(int i = 0; i < n; i++){
-            if(strArr[i].length() == 2){
+            if(strArr[i].charAt(0) == '-'){
                 m++;
             }
             else{
