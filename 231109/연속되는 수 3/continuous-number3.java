@@ -16,7 +16,7 @@ public class Main {
 
         for(int i = 0; i < n; i++){
             answer[idx] ++;
-            if(i != 0 && strArr[i].charAt(0) != strArr[i-1].charAt(0)){
+            if(i != 0 && (strArr[i].charAt(0)=='-') != (strArr[i-1].charAt(0) =='-')){
                 idx++;
             }
             else if(i != 0 && Character.isDigit(strArr[i].charAt(0)) != Character.isDigit(strArr[i-1].charAt(0))){
