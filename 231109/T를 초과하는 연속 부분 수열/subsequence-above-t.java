@@ -16,10 +16,11 @@ public class Main {
         for(int i = 0; i < s.length; i++){
             arr[i] = Integer.parseInt(s[i]);
         }
+        Arrays.sort(arr);
 
         int ans = 0, cnt = 0;
         for(int i = 0; i < arr.length; i++){
-            if((i >= 1 && arr[i-1] >= t) && arr[i] > arr[i-1]){
+            if((i >= 1 && arr[i-1] >= t) && arr[i] >= arr[i-1]){
                 cnt++;
             }
             else{
