@@ -23,6 +23,9 @@ public class Main {
                 System.out.print(ch);
                 break;
             }
+            else if(i == m-1){
+                System.out.print(-1);
+            }
         }
     }
 }
