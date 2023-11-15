@@ -20,7 +20,7 @@ public class Main {
             int v = Integer.parseInt(s[0]);
             int t = Integer.parseInt(s[1]);
             while(t-- > 0){
-                a[timeA] += v;
+                a[timeA] = a[timeA-1] + v;
                 timeA++;
             }
         }
@@ -31,7 +31,7 @@ public class Main {
             int v = Integer.parseInt(s[0]);
             int t = Integer.parseInt(s[1]);
             while(t-- > 0){
-                b[timeB] += v;
+                b[timeB] = b[timeB-1] + v;
                 timeB++;
             }
         }
