@@ -23,6 +23,7 @@ public class Main {
                     A[timeA] = A[timeA-1] + 1;
                 else
                     A[timeA] = A[timeA-1] - 1;
+                timeA++;
             }
         }
 
@@ -37,11 +38,13 @@ public class Main {
                     B[timeB] = B[timeB-1] + 1;
                 else
                     B[timeB] = B[timeB-1] - 1;
+                timeB++;
             }
         }
+        int timeMax = Math.max(timeA,timeB);
         int result = 0;
-        for(int i = 0; i < n; i++){
-            if(A[i] == B[i])
+        for(int i = 1; i <= timeMax; i++){
+            if(A[i] == B[i] && A[i-1] != B[i-1])
                 result ++;
         }
 
