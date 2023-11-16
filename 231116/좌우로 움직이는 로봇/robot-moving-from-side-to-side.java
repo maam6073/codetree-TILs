@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static int MAX_N = 50000;
+    public static int MAX_N = 1000000;
     public static int n,m;
     public static int[] A = new int[MAX_N+1];
     public static int[] B = new int[MAX_N+1];
