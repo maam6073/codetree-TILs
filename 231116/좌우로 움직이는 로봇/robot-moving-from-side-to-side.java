@@ -41,9 +41,21 @@ public class Main {
                 timeB++;
             }
         }
+        if(timeA > timeB){
+            for(int i = timeB; i < timeA; i++){
+                B[i] = B[i-1];
+            }
+        }
+        else if(timeA < timeB){
+            for(int i = timeA; i < timeB; i++){
+                A[i] = A[i-1];
+            }
+        }
+
+
         int timeMax = Math.max(timeA,timeB);
         int result = 0;
-        for(int i = 1; i <= timeMax; i++){
+        for(int i = 1; i < timeMax; i++){
             if(A[i] == B[i] && A[i-1] != B[i-1])
                 result ++;
         }
