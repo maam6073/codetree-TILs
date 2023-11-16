@@ -2,10 +2,10 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static int MAX_T = 1000000;
+    public static int MAX_N = 1000000;
     public static int n,m;
-    public static int[] A = new int[MAX_T+1];
-    public static int[] B = new int[MAX_T+1];
+    public static int[] A = new int[MAX_N+1];
+    public static int[] B = new int[MAX_N+1];
     public static void main(String[] args) throws IOException {
         // 여기에 코드를 작성해주세요.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -37,25 +37,30 @@ public class Main {
             }
         }
 
+        int MAX_T = Math.max(timeA,timeB);
+
+
         int leader = 0 , rsuCnt = 0;
-        for(int i = 1; i < timeA; i++){
+        for(int i = 1; i < MAX_T; i++){
             if(A[i] > B[i]){
-                if(leader ==2 || leader ==3)
-                    rsuCnt ++;
+                if(leader == 2 || leader == 3 || i == 1)
+                    rsuCnt++;
 
                 leader = 1;
             }
             else if(A[i] < B[i]){
-                if(leader == 1 || leader ==3)
-                    rsuCnt ++;
+                if(leader == 1 || leader == 3 || i == 1)
+                    rsuCnt++;
 
                 leader = 2;
             }
             else if(A[i] == B[i]){
-                    rsuCnt ++;
-
+                if(leader == 1 || leader == 2 || i == 1)
+                    rsuCnt++;
+                
                 leader = 3;
             }
+            
         }
         System.out.print(rsuCnt);
     }
