@@ -2,25 +2,24 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static final int MAX_N = 50;
-    public static int[][] arr = new int[MAX_N+1][MAX_N+1];
-    public static int[] dx = new int[]{0,-1,1,0};
+    public static int[] dx = new int[]{0,1,-1,0};
     public static int[] dy = new int[]{1,0,0,-1};
     public static int n,t,r,c,dirNum;
+    public static int x,y;
     public static char d;
 
     private static boolean inRange(int x, int y){
-        return ((x > 0 && x < n) || (y > 0 && y < n));
+        return 0 <= x && x < n && 0 <= y && y < n;
     }
 
     private static int getDir(char d){
-        if(d == 'U')
-            return 1;
-        else if(d == 'D')
-            return 2;
-        else if(d == 'R')
+        if(d == 'R')
             return 0;
-        else
+        else if(d == 'D')
+            return 1;
+        else if(d == 'U')
+            return 2;
+        else 
             return 3;
     }
 
@@ -37,16 +36,18 @@ public class Main {
         dirNum = getDir(d);
 
 
-        int nx = r , ny = c;
-        for(int i = 0; i < t; i++){
-            nx += nx >= 0 ? dx[dirNum] : 0;
-            ny += ny >= 0 ? dy[dirNum] : 0;
-            if(!inRange(nx,ny)){
+        while(t-- > 0){
+            int nx = r + dx[dirNum];
+            int ny = c + dy[dirNum];
+            if(inRange(nx,ny)){
+                x = nx;
+                y = ny;
+            }
+            else{
                 dirNum = 3 - dirNum;
-                i++;
             }
         }
 
-        System.out.print((nx+1) +" "+ (ny+1));
+        System.out.print((x + 1) +" "+ (y + 1));
     }
 }
