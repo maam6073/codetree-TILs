@@ -19,7 +19,7 @@ public class Main {
             return 1;
         else if(d == 'U')
             return 2;
-        else 
+        else
             return 3;
     }
 
@@ -35,19 +35,18 @@ public class Main {
         d = s[2].charAt(0);
         dirNum = getDir(d);
 
-
         while(t-- > 0){
             int nx = r + dx[dirNum];
             int ny = c + dy[dirNum];
             if(inRange(nx,ny)){
-                x = nx;
-                y = ny;
+                r = nx;
+                c = ny;
             }
             else{
                 dirNum = 3 - dirNum;
             }
         }
 
-        System.out.print((x + 1) +" "+ (y + 1));
+        System.out.print((r + 1) +" "+ (c + 1));
     }
 }
