@@ -3,8 +3,9 @@ import java.io.*;
 
 
 public class Main {
+    private static int MAX_N = 100;
     private static int n;
-    private static int[][] arr = new int[100][100];
+    private static int[][] arr = new int[MAX_N][MAX_N];
     private static int[] dx = new int[]{0, 1, 0, -1};
     private static int[] dy = new int[]{1, 0, -1, 0};
     private static int dir = 0;
@@ -23,6 +24,10 @@ public class Main {
             dir = 0;
     }
 
+    private static boolean inRange(int x,int y){
+        return x >= 0 && x < MAX_N && y >= 0 && y < MAX_N;
+    }
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
@@ -39,7 +44,8 @@ public class Main {
                 int nx = x + dx[dir];
                 int ny = y + dy[dir];
 
-                arr[nx][ny] = cnt;
+                if(inRange(nx,ny))
+                    arr[nx][ny] = cnt;
 
                 if(i != 0 && ny == sP && nx == sP){
                     check = true;
@@ -54,7 +60,7 @@ public class Main {
 
             if(check)
                 break;
-            else if(i == n-1 && check == false)
+            else if(i == n-1 && !check)
                 cnt = -1;
         }
 
