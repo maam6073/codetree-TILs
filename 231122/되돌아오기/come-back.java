@@ -54,7 +54,7 @@ public class Main {
 
             if(check)
                 break;
-            else if(i == n-1 && !check)
+            else if(i == n-1 && check == false)
                 cnt = -1;
         }
 
