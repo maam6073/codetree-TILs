@@ -8,9 +8,9 @@ public class Main {
     private static int[] dx = new int[]{0,1,0,-1};
     private static int[] dy = new int[]{1,0,-1,0};
 
-    // private static boolean inRange(int x,int y){
-    //     return x >= 0 && x 
-    // }
+    private static boolean inRange(int x,int y){
+        return x >= 0 && x < arr.length && y >= 0 && y < arr.length;
+    }
 
     public static void main(String[] args) throws IOException {
         // 여기에 코드를 작성해주세요.
@@ -32,7 +32,7 @@ public class Main {
                 int x = r + dx[j];
                 int y = c + dy[j];
 
-                if(arr[x][y] == 1){
+                if(inRange(x,y) && arr[x][y] == 1){
                     cnt++;
                 }
             }
