@@ -23,7 +23,7 @@ public class Main {
         arr = new char[n][m];
         arr[x][y] = (char)ch;
 
-        while(maxNM -- > 0){
+        while((n*m) > 2 && maxNM -- > 0){
             int nx = x + dx[dirNum];
             int ny = y + dy[dirNum];
             if(!inRange(nx,ny) || (inRange(nx,ny) && arr[nx][ny] != (char)0)){
