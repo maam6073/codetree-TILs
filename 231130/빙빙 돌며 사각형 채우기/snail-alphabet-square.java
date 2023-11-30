@@ -21,9 +21,10 @@ public class Main {
         m = Integer.parseInt(s[1]);
         int maxNM = n*m;
         arr = new char[n][m];
+
         arr[x][y] = (char)ch;
 
-        while((n*m) > 2 && maxNM -- > 0){
+        while(maxNM -- > 1){
             int nx = x + dx[dirNum];
             int ny = y + dy[dirNum];
             if(!inRange(nx,ny) || (inRange(nx,ny) && arr[nx][ny] != (char)0)){
