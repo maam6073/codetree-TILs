@@ -23,6 +23,9 @@ public class Main {
             a[i] = b[i];
         }
 
-        System.out.print(max);
+        if(a.length <= 1)
+            System.out.print(0);
+        else
+            System.out.print(max);
     }
 }
