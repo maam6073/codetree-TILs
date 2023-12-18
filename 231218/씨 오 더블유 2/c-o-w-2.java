@@ -8,22 +8,16 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         String[] s = br.readLine().split("");
 
-        int c = 0;
         int cnt = 0;
-        while(s[c].equals("C")){
-            for(int o = 1; o < n; o++){
-                if(s[o].equals("O")){
-                    for(int w = o+1; w < n; w++){
-                        if(!s[o].equals(s[w])){
-                            cnt++;
-                        }
-                    }
+        for(int i = 0; i < n; i++){
+            for(int j = i +1; j < n; j++){
+                for(int k = j +1; k < n; k++){
+                    if(!s[i].equals(s[j]) && !s[j].equals(s[k]))
+                        cnt++;
                 }
-                else
-                    break;
             }
-            c++;
         }
+        
         System.out.print(cnt);
     }
 }
